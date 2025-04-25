@@ -5,7 +5,7 @@ Integrantes del grupo:
 Mordka, Lucas Ayén
 Mortola, Jorge Homero
 
-Se utilizan esta tabla de tasas:
+Se utilizan esta tabla de tasas (actualizadas a la fecha 25/04/25):
 
 | Moneda | Valor |
 |--------|-------|
