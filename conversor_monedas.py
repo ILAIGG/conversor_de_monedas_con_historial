@@ -1,4 +1,0 @@
-USD = 0
-EUR = 0
-ARS = 0
-BRL = 0
