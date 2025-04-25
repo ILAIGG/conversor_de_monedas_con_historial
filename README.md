@@ -4,3 +4,12 @@ Un conversor de monedas simple que permita al usuario convertir montos entre dis
 Integrantes del grupo:
 Mordka, Lucas Ayén
 Mortola, Jorge Homero
+
+Se utilizan esta tabla de tasas:
+
+| Moneda | Valor |
+|--------|-------|
+|   USD  |   1   |
+|   EUR  | 0.88  |
+|   ARS  | 1168  |
+|   BRL  | 5.69  |
