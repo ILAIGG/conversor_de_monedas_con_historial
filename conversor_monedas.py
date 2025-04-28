@@ -33,57 +33,56 @@ def mostrar_historial():
 
 def conversor():
     #Usamos try para validar la entrada ddel usuario 
-    try:
-        #le pedimos al usuario las variavles relevantes
-        while True:
+    
+    #le pedimos al usuario las variavles relevantes
+    while True:
 
-            moneda_tipo_original = input("Ingrese el tipo de moneda que tiene (USD/EUR/ARS/BRL): ").upper()
-            
-            #asignamos el valor de la moneda orijinal en vase al archivo "valores_monedas"
-            match moneda_tipo_original:
-                case "USD":
-                    divisor = USD
-                    break
-                case "EUR":
-                    divisor = EUR
-                    break
-                case "ARS":
-                    divisor = ARS
-                    break
-                case "BRL":
-                    divisor = BRL
-                    break
-                case _:
-                    print("Moneda original no válida")  
-
-        while True:
-
-            moneda_tipo_cambio = input("Ingrese el tipo de moneda al que desea cambiar (USD/EUR/ARS/BRL): ").upper()             
-
-            #asignamos el valor de la moneda a comvertir en vase al archivo "valores_monedas"
-            match moneda_tipo_cambio:
-                case "USD":
-                    dividendo = USD
-                    break
-                case "EUR":
-                    dividendo = EUR
-                    break
-                case "ARS":
-                    dividendo = ARS
-                    break
-                case "BRL":
-                    dividendo = BRL
-                    break
-                case _:
-                    print("Moneda a convertir no válida")
+        moneda_tipo_original = input("Ingrese el tipo de moneda que tiene (USD/EUR/ARS/BRL): ").upper()
         
-        dinero_cantidad = float(input("¿Cuánto dinero tiene?: "))
-                    
-        #calculamos la ccantidad de la nueva moneda y se lo mostramos por pantalla
-        dinero_final = dinero_cantidad * (dividendo / divisor)
-        print(f"Resultado: {dinero_final:.2f} {moneda_tipo_cambio}")
-    except:
-        print("valores invalidos")
+        #asignamos el valor de la moneda orijinal en vase al archivo "valores_monedas"
+        match moneda_tipo_original:
+            case "USD":
+                divisor = USD
+                break
+            case "EUR":
+                divisor = EUR
+                break
+            case "ARS":
+                divisor = ARS
+                break
+            case "BRL":
+                divisor = BRL
+                break
+            case _:
+                print("Moneda original no válida")  
+
+    while True:
+
+        moneda_tipo_cambio = input("Ingrese el tipo de moneda al que desea cambiar (USD/EUR/ARS/BRL): ").upper()             
+
+        #asignamos el valor de la moneda a comvertir en vase al archivo "valores_monedas"
+        match moneda_tipo_cambio:
+            case "USD":
+                dividendo = USD
+                break
+            case "EUR":
+                dividendo = EUR
+                break
+            case "ARS":
+                dividendo = ARS
+                break
+            case "BRL":
+                dividendo = BRL
+                break
+            case _:
+                print("Moneda a convertir no válida")
+    
+    dinero_cantidad = float(input("¿Cuánto dinero tiene?: "))
+                
+    #calculamos la ccantidad de la nueva moneda y se lo mostramos por pantalla
+    dinero_final = dinero_cantidad * (dividendo / divisor)
+    print(f"Resultado: {dinero_final:.2f} {moneda_tipo_cambio}")
+    
 
     #Se guarda la conversión en el historial.
     entrada_historial = {
@@ -97,9 +96,11 @@ def conversor():
     guardar_historial(historial)
 
 #Ejecutamos la funcion para hacer la comvercion
-conversor()
-
+try:
+    conversor()
+except:
+    print("valores invalidos")
 #Le preguntamos al usuario si decea ver el
 ver_historial = input("desea ver el historial? (s/n)").lower
-if ver_historial == "si":
+if ver_historial == "s":
     mostrar_historial()
